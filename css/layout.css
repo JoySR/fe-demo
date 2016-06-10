@@ -1,0 +1,121 @@
+/* 布局无关 */
+
+body, div {margin: 0; padding: 0;}
+body {
+    font-family: '微软雅黑', Helvetica, Arial, sans-serif;
+}
+
+.header, .footer {
+    background: #f1fafb;
+    padding: 20px;
+    text-align: center;
+}
+.header {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.main, .aside, .aside-left, .aside-right {
+    min-height: 300px;
+}
+
+.main { background-color: #e4f5e5; }
+.aside-left { background-color: #ffffd2; }
+.aside-right, .aside { background-color: #a6dfde; }
+
+
+/* 布局相关 */
+
+.container:after { /* 包裹主体和边栏的父元素应清除浮动 */
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* 双栏双飞翼布局 */
+#col-2-wing .main,
+#col-2-wing .aside { /* 主体和边栏均设置浮动 */
+    float: left;
+}
+#col-2-wing .main { /* 主体宽度与父元素相等 */
+    width: 100%;
+}
+#col-2-wing .main .wrap {
+    margin-right: 200px; /* 内部包裹一层元素, 其右外边距与边栏宽度相等,用于留出空间给边栏 */
+}
+#col-2-wing .aside { /* 边栏固定宽度, 设置 负 的左外边距, 大小为自身宽度的负值 */
+    width: 200px;
+    margin-left: -200px;
+}
+
+/* 三栏双飞翼布局 */
+
+#col-3-wing .main,
+#col-3-wing .aside-left,
+#col-3-wing .aside-right { /* 主体和边栏均设置浮动 */
+    float: left;
+}
+#col-3-wing .main {
+    width: 100%; /* 主体宽度与父元素相等 */
+}
+#col-3-wing .main .wrap {
+    margin: 0 200px; /* 内部包裹一层元素, 其左右外边距与边栏宽度相等,用于留出空间给边栏 */
+}
+#col-3-wing .aside-left {
+    width: 200px; /* 边栏固定宽度 */
+    margin-left: -100%; /* 左边栏设置 负 的左外边距, 大小等同于父元素的宽度, 也就是主体元素的宽度 */
+}
+#col-3-wing .aside-right {
+    width: 200px; /* 边栏固定宽度 */
+    margin-left: -200px; /* 右边栏设置 负 的左外边距, 大小为自身宽度的负值 */
+}
+
+/* 双栏圣杯布局 */
+
+#col-2-holygrail .container {
+    padding-right: 200px; /* 父元素设置右边距(内边距或外边距均可, 使用内边距可以方便用外边距进行其他布局设定), 大小等于边栏的宽度 */
+    /*margin: 0 20px;*/
+}
+
+#col-2-holygrail .main,
+#col-2-holygrail .aside { /* 主体和边栏均设置浮动 */
+    float: left;
+}
+#col-2-holygrail .main { /* 主体宽度与父元素相等 */
+    width: 100%;
+}
+#col-2-holygrail .aside {
+    width: 200px; /* 边栏固定宽度 */
+    margin-left: -200px; /* 右边栏设置 负 的左外边距, 大小为自身宽度的负值 */
+    position: relative; /* 使用相对定位 */
+    left: 200px; /* 向左偏移的距离等于自身宽度 */
+}
+
+/* 三栏圣杯布局 */
+
+#col-3-holygrail .container {
+    margin: 0 200px; /* 父元素设置左右内或外边距, 大小等于边栏的宽度 */
+}
+
+#col-3-holygrail .main,
+#col-3-holygrail .aside-left,
+#col-3-holygrail .aside-right { /* 主体和边栏均设置浮动 */
+    float: left;
+}
+
+#col-3-holygrail .main { /* 主体宽度与父元素相等 */
+    width: 100%;
+}
+
+#col-3-holygrail .aside-left {
+    width: 200px; /* 边栏固定宽度 */
+    margin-left: -100%; /* 左边栏设置 负 的左外边距, 大小等同于父元素的宽度, 也就是主体元素的宽度 */
+    position: relative; /* 使用相对定位 */
+    left: -200px; /* 向左偏移的距离等于自身宽度的 负 值 */
+}
+#col-3-holygrail .aside-right {
+    width: 200px; /* 边栏固定宽度 */
+    margin-left: -200px; /* 右边栏设置 负 的左外边距, 大小为自身宽度的负值 */
+    position: relative; /* 使用相对定位 */
+    left: 200px; /* 向左偏移的距离等于自身宽度 */
+}

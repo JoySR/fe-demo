@@ -438,3 +438,52 @@ $center-fixed-wh-absolute-height: 200px;
     }
   }
 }
+
+/* 导航与二级导航 */
+
+#navbar {
+  height: 300px; /* TODO: 自动撑开 */
+
+  & > ul {
+    background: #aaa;
+
+    & > li {
+      float: left;
+      padding: 10px;
+      color: #fff;
+      position: relative;
+      cursor: pointer;
+
+      &:hover {
+        background: red;
+      }
+
+      a {color: #fff;}
+
+      ul {
+        display: none;
+        background: #cfcfcf;
+        position: absolute;
+        top: 35px;
+        left: 0;
+
+        li {
+          margin-top: 10px;
+          padding: 10px;
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          &:hover {
+            background: red;
+          }
+        }
+      }
+
+      &:hover .sub {
+        display: block;
+      }
+    }
+  }
+}

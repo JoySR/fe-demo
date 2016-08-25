@@ -1,2 +1,2 @@
 # fe-demo
-Demo for my works
+Small demos for front-end techniques

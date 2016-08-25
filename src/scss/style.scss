@@ -328,9 +328,7 @@ $center-fixed-wh-absolute-height: 200px;
     text-align: center;
     line-height: 30px;
     border: none;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    @include prefix(border-radius, 5px);
     text-decoration: none;
     font-family: '微软雅黑', Helvetica, Arial, sans-serif;
     font-size: 22px;
@@ -346,6 +344,8 @@ $center-fixed-wh-absolute-height: 200px;
     }
   }
 }
+
+/* Sprite */
 
 #sprite .player > li {
   display: inline-block;
@@ -383,4 +383,58 @@ $center-fixed-wh-absolute-height: 200px;
 }
 #sprite .stop:hover:before {
   background-position: 0 -44px;
+}
+
+/* 提示角标 */
+
+#colorful-corner {
+  .box {
+    width: 360px;
+    height: 180px;
+    border: 2px solid #d5d5d5;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 10px;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      border-bottom: 25px solid #f00;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
+      @include prefix(transform, rotate(45deg));
+      right: -17px;
+      top: -5px;
+    }
+  }
+}
+
+/* 提示对话框 */
+
+#tooltip-box {
+  .box {
+    width: 360px;
+    height: 180px;
+    border: 2px solid #d5d5d5;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 10px;
+    position: relative;
+    /* TODO: 以上 和上面的.box 相同,精简 */
+    z-index: 100;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-top: 2px solid #d5d5d5;
+      border-left: 2px solid #d5d5d5;
+      @include prefix(transform, rotate(45deg));
+      background: #fff;
+      top: -13px;
+      left: 20px;
+    }
+  }
 }

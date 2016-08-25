@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width,
+            height=device-height,
+            inital-scale=1.0,
+            maximum-scale=1.0,
+            user-scalable=no;"
+    />
+    <title>FE Exercises</title>
+    <!-- [if lt IE 9]>
+    <link rel="stylesheet" href="css/ie.css">
+    <![endif]-->
+    <!-- [if gte IE 9]><!-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--[endif]-->
+</head>
+<body>
+<!-- [if lt IE 9]>
+<p class="ie-notice">您好，您正在使用 IE9 以下版本的 IE 浏览器。建议您使用现代浏览器（如 <a href="https://www.google.com/chrome/">Google Chrome</a>，<a href="http://www.opera.com/">Opera</a>，<a href="http://www.apple.com/safari/">Safari</a>，<a href="https://www.mozilla.org/zh-CN/firefox/new/">Mozilla Firefox</a> 或 <a href="https://www.microsoft.com/zh-cn/windows/microsoft-edge">Microsoft Edge</a> 等）以获得更佳的体验效果。:)</p>
+<![endif]-->
+<!-- [if gte IE 9]><!-->
+<!-- Main code goes here -->
+
+<div class="wrapper">
+    <div class="code-list">
+        <section>
+            <h5>说明</h5>
+            <div class="sandbox" id="author-words">
+                <p>一些基础的代码块及演示</p>
+            </div>
+        </section>
+        <section>
+            <h5>居中浮动的元素</h5>
+            <div class="sandbox clearfix" id="float-center">
+                <div class="float-p">
+                    <div class="float-c">
+                        <p>元素本身是浮动的,然后让它居中显示</p>
+                        <ul>
+                            <li>内部可以添加其他内容,比如段落</li>
+                            <li>或是列表</li>
+                            <li>等等</li>
+                        </ul>
+                        <ol>
+                            <li>父元素(淡黄色区域)浮动,相对定位,left 50%</li>
+                            <li>子元素(半透明)浮动,相对定位,left -50%</li>
+                            <li>类似通过绝对定位实现固定宽高的水平垂直居中</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h5>双栏双飞翼布局</h5>
+            <div class="sandbox clearfix" id="col-2-wing">
+                <div class="main">
+                    <div class="wrap">双飞翼布局指边栏定宽，主体自适应的布局，主体应放在文档流前面以优先渲染</div>
+                </div>
+                <div class="aside">边栏，固定宽度</div>
+                <div class="aside s-left">左侧边栏</div>
+                <div class="aside s-right">右侧边栏</div>
+            </div>
+        </section>
+        <section>
+            <h5>三栏双飞翼布局</h5>
+            <div class="sandbox clearfix" id="col-3-wing">
+                <div class="main">
+                    <div class="wrap">双飞翼布局指边栏定宽，主体自适应的布局，主体应放在文档流前面以优先渲染</div>
+                </div>
+                <div class="aside s-left">左侧边栏，固定宽度</div>
+                <div class="aside s-right">右侧边栏，固定宽度</div>
+            </div>
+        </section>
+        <section>
+            <h5>双栏圣杯布局</h5>
+            <div class="sandbox clearfix" id="col-2-holygrail">
+                <div class="main">
+                    <div class="wrap">圣杯布局指边栏定宽，主体自适应的布局，主体应放在文档流前面以优先渲染</div>
+                </div>
+                <div class="aside">边栏，固定宽度</div>
+            </div>
+        </section>
+        <section>
+            <h5>三栏圣杯布局</h5>
+            <div class="sandbox clearfix" id="col-3-holygrail">
+                <div class="main">
+                    <div class="wrap">圣杯布局指边栏定宽，主体自适应的布局，主体应放在文档流前面以优先渲染</div>
+                </div>
+                <div class="aside s-left">左侧边栏，固定宽度</div>
+                <div class="aside s-right">右侧边栏，固定宽度</div>
+            </div>
+        </section>
+        <section>
+            <h5>水平垂直居中 - 绝对定位 - 固定宽高</h5>
+            <div class="sandbox" id="center-fixed-wh">
+                <div class="box">用于测试的 box</div>
+            </div>
+        </section>
+        <section>
+            <h5>水平垂直居中 - 绝对定位 - 宽高随意</h5>
+            <div class="sandbox" id="center-wh">
+                <div class="box">用于测试的 box</div>
+            </div>
+        </section>
+        <section>
+            <h5>水平垂直居中 - flex - 宽高随意</h5>
+            <div class="sandbox" id="center-flex">
+                <div class="box">用于测试的 box</div>
+            </div>
+        </section>
+        <section>
+            <h5>水平垂直居中 - 绝对定位 - css3 - 宽高随意</h5>
+            <div class="sandbox" id="center-css3">
+                <div class="box">用于测试的 box</div>
+            </div>
+        </section>
+        <section>
+            <h5>水平垂直居中 - 表格 - 宽高随意 - inline(-block)</h5>
+            <div class="sandbox" id="center-inline-table-cell">
+                <span class="box">用于测试的 span box</span>
+            </div>
+        </section>
+        <section>
+            <h5>水平垂直居中 - 多个元素 - inline-block</h5>
+            <div class="sandbox" id="center-multi-inline-block">
+                <div class="box">用于测试的 box</div>
+                <div class="box">用于测试的 box</div>
+                <div class="box">用于测试的 box</div>
+                <div class="box">用于测试的 box</div>
+            </div>
+        </section>
+        <section>
+            <h5>水平垂直居中 - 多个元素 - flex</h5>
+            <div class="sandbox" id="center-multi-flex">
+                <div class="box">用于测试的 box</div>
+                <div class="box">用于测试的 box</div>
+                <div class="box">用于测试的 box</div>
+                <div class="box">用于测试的 box</div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- End of main code -->
+
+<!-- build:js js/app.js -->
+<script src="js/jquery.min.js"></script>
+<script src="js/app.js"></script>
+<!-- endbuild -->
+<!--[endif]-->
+</body>
+</html>

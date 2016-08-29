@@ -597,3 +597,47 @@ $center-fixed-wh-absolute-height: 200px;
     height: 180px;
   }
 }
+
+/* A simple CSS3 Opera Logo */
+
+.dear-opera {
+  margin: 20px auto;
+  height: 300px;
+  width: 270px;
+  background: linear-gradient(0deg,#a62f20 0%, #852418 25%, #ba3523 50%,#ed473f 75%, #f08185);
+  border-radius: 135px/150px;
+  border: 1px solid #f2a4a0;
+
+  &:after {
+    content: "";
+    display: block;
+    height: inherit;
+    width: inherit;
+    background: inherit;
+    border-radius: inherit;
+    position: relative;
+    top: -115px;
+  }
+}
+
+.opera-inner {
+  width: 270px;
+  height: 120px;
+  background: #fff;
+  border-radius: 140px/60px;
+  transform: rotate(90deg);
+  position: relative;
+  z-index: 2;
+  top: 90px;
+  background: linear-gradient(45deg,#a62f20 0%, #852418 25%, #d84534 50%,#e36359 75%, #f08185);
+
+  &:after {
+    content: "";
+    display: block;
+    width: inherit;
+    height: inherit;
+    background: #fff;
+    border-radius: inherit;
+    transform: scale(0.93);
+  }
+}

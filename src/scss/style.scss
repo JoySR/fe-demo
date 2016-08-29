@@ -6,7 +6,7 @@ $prefixes : -webkit-, -moz-, -ms-, -o-,"";
   }
 }
 
-body, div, section, h5, ul, ol, li {
+body, div, section, h5, h6, ul, ol, li {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -485,5 +485,115 @@ $center-fixed-wh-absolute-height: 200px;
         display: block;
       }
     }
+  }
+}
+
+/* Tab 切换 */
+
+#tabs li {
+  float: left;
+  border: 1px solid #ddd;
+  width: 33.333%;
+  text-align: center;
+  padding: 5px 0;
+  cursor: pointer;
+
+  .active {
+    background: #efefef;
+  }
+}
+
+#tab-content {
+  border: 1px solid #ddd;
+  height: 200px;
+  margin-top: -1px;
+  padding: 20px;
+  text-align: left;
+
+  & > p {
+    display: none;
+  }
+
+  .active {
+    display: block;
+  }
+}
+
+/* Modal Box */
+
+#modal {
+  position: relative;
+  width: 600px;
+  height: 400px;
+
+  input {
+    cursor: pointer;
+  }
+
+  .panel {
+    position: absolute;
+    background: rgba(200,200,200,.6);
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 400px;
+    display: none;
+
+    .container {
+      position: absolute;
+      width: 400px;
+      height: 180px;
+      top: 50%;
+      left: 50%;
+      margin-left: -200px;
+      margin-top: -90px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      background: #fff;
+
+      .header {
+        border-bottom: 1px solid #ccc;
+        padding: 10px;
+        height: 40px;
+
+        &:after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+
+        h6 {
+          font-size: 16px;
+          float: left;
+        }
+
+        .close {
+          float: right;
+          cursor: pointer;
+        }
+      }
+
+      .content {
+        padding: 10px;
+        height: 100px;
+
+        p {
+          margin: 10px;
+        }
+      }
+
+      .footer {
+        border-top: 1px solid #eee;
+        text-align: right;
+        padding: 10px;
+        height: 40px;
+      }
+    }
+  }
+
+  .cover {
+    width: 400px;
+    height: 180px;
   }
 }

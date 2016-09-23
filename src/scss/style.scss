@@ -1019,3 +1019,137 @@ $center-fixed-wh-absolute-height: 200px;
     }
   }
 }
+
+/* 链接动态悬浮效果 */
+
+#animate-link {
+  text-align: left;
+  line-height: 1.5;
+
+  $animate-link-basic-color: #6699CC;
+  $animate-link-transition-time: .35s;
+
+  a {
+    color: $animate-link-basic-color;
+    padding: auto .25em .05em;
+    text-decoration: none;
+
+    &.fade_in_bg {
+      border-bottom: 0.0625em dotted $animate-link-basic-color;
+      transition: all $animate-link-transition-time;
+
+      &:hover {
+        background: $animate-link-basic-color;
+        color: #fff;
+        transition: all $animate-link-transition-time;
+      }
+    }
+
+    &[class^="slide"] {
+      line-height: 1.5;
+      border-bottom: 0.0625em dotted $animate-link-basic-color;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+
+      &::after {
+        content: attr(data-linktext);
+        background: $animate-link-basic-color;
+        color: #fff;
+        position: absolute;
+        display: block;
+        text-align: center;
+        transition: all $animate-link-transition-time;
+      }
+
+      &:hover {
+        border-bottom: 0.0625em solid $animate-link-basic-color;
+
+        &::after {
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          transition: all $animate-link-transition-time;
+        }
+      }
+    }
+
+    &.slide_from_left::after {
+      top: 0;
+      right: 100%;
+      left: -100%;
+    }
+
+    &.slide_from_right::after {
+      top: 0;
+      right: -100%;
+      left: 100%;
+    }
+
+    &.slide_from_top::after {
+      top: -100%;
+      bottom: 100%;
+    }
+
+    &.slide_from_bottom::after {
+      top: 100%;
+      bottom: -100%;
+    }
+
+    &.fade_in_underline {
+      border-bottom: 0.125em solid #fff;
+      transition: all $animate-link-transition-time;
+
+      &:hover {
+        border-bottom: 0.125em solid $animate-link-basic-color;
+        transition: all $animate-link-transition-time;
+      }
+    }
+
+    &[class^='underline'] {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        border-bottom: 0.125em solid $animate-link-basic-color;
+        transition: all $animate-link-transition-time;
+      }
+
+      &:hover::after {
+        transition: all $animate-link-transition-time;
+      }
+    }
+
+    &.underline_from_left::after {
+      left: 0;
+      right: 100%;
+    }
+
+    &.underline_from_left:hover::after {
+      right: 0;
+    }
+
+    &.underline_from_right::after {
+      right: 0;
+      left: 100%;
+    }
+
+    &.underline_from_right:hover::after {
+      left: 0;
+    }
+
+    &.underline_from_center::after {
+      right: 50%;
+      left: 50%;
+    }
+
+    &.underline_from_center:hover::after {
+      right: 0;
+      left: 0;
+    }
+  }
+}

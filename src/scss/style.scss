@@ -657,3 +657,365 @@ $center-fixed-wh-absolute-height: 200px;
   input[type="email"]::-webkit-input-placeholder {color:#ccc;}
   input[type="email"]:-ms-input-placeholder {color:#ccc;}
 }
+
+/* CSS3 business card */
+#business-card {
+  #flip {
+    display: none;
+  }
+  .card {
+    padding: 0;
+    display: block;
+    width: 32rem;
+    height: 20rem;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+  }
+  .front,
+  .back {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: rgba(0,0,0,.2) 0 0 3rem 0, rgba(0,0,0, .1) 0 0 1rem 0;
+  }
+  .front {
+    transform: translateZ(2px);
+    /*			background-color: #2d5077;*/
+    background-color: #363636;
+    border-radius: 2rem 0;
+    color: #cddbea;
+  }
+  .back {
+    transform: translateZ(-2px) rotateY(180deg);
+    background-color: #fff;
+    border-radius: 0 2rem;
+    border: 1px solid #404040;
+    padding-top: 1.7rem;
+  }
+
+  #flip:not(:checked) + label > .card {
+    transform: rotateY(0deg);
+    transition: transform .25s;
+  }
+  #flip:checked + label > .card {
+    transform: rotateY(180deg);
+    transition: transform .25s;
+  }
+
+  .front_bg {
+    position: absolute;
+    top: -0.5rem;
+    left: -1.5rem;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 28rem;
+    line-height: 25rem;
+    letter-spacing: -.09em;
+    color: rgba(255, 255, 255, .04);
+  }
+  .strip {
+    position: absolute;
+    top: 6rem;
+    bottom: 6rem;
+    left: 0;
+    right: 0;
+    /*			background-color: #2d5077;*/
+    background-color: rgba(40,40,40,.6);
+  }
+  .left-side,
+  .right-side {
+    position: absolute;
+    top: 7rem;
+    bottom: 7rem;
+    width: .25rem;
+    /*			background-color: #3a5c81;*/
+    background-color: #404040;
+  }
+  .left-side {
+    left: 4.5rem;
+  }
+  .right-side {
+    right: 4.5rem;
+  }
+  .name {
+    position: absolute;
+    top: 8rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+  }
+  .profession {
+    position: absolute;
+    top: 11rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  .notice {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    font-size: .85rem;
+  }
+
+  .left-back {
+    background-color: #404040;
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    bottom: 0;
+    width: 9.5rem;
+  }
+  .item {
+    position: relative;
+    margin-left: 3.5rem;
+    text-align: left;
+    font-size: 1.65rem;
+    font-weight: 700;
+    line-height: 2em;
+    z-index: 1;
+  }
+  .item:before,
+  .item:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    z-index: -1;
+    transition: width .35s;
+  }
+  .item:before {
+    left: 0;
+    background-color: #404040;
+  }
+  .item:after {
+    right: 23.35rem;
+    background-color: #dadada;
+  }
+  .item:hover:before {
+    width: 30rem;
+    transition: width .35s;
+  }
+  .item:hover:after {
+    width: 9rem;
+    transition: width .35s;
+  }
+  .item a {
+    color: #404040;
+    transition: color .35s;
+  }
+  .item:hover a {
+    color: #cddbea;
+    transition: color .35s;
+  }
+  .item .fa {
+    width: 2em;
+    text-align: center;
+    margin-right: 2em;
+    color: #cddbea;
+    transition: color .35s;
+  }
+  .item:hover .fa {
+    color: #333;
+    transition: color .35s;
+  }
+
+  .item .link,
+  .item .text {
+    position: relative;
+  }
+
+  .item .link {
+    /*display: none;*/
+    left: 9999px;
+    transition: all .35s;
+  }
+
+  .item:hover .link {
+    /*display: inline-block;*/
+    left: -7rem;
+    transition: all .35s;
+  }
+
+  .item:hover .text {
+    left: -9999px;
+    transition: all .35s;
+  }
+}
+
+/* Flex menu with submenu */
+#flex-menu-submenu {
+  min-height: 300px;
+
+  #flex-menu-toggle {
+    display: none;
+  }
+
+  label {
+    display: none;
+    font-size: 2em;
+    width: 1.3em;
+    height: 1.2em;
+    text-align: center;
+    line-height: 1.2;
+    margin: 20px auto;
+    cursor: pointer;
+    color: #fff;
+    background-color: #0077b5;
+  }
+
+  .flex-menu {
+    display: flex;
+    justify-content: center;
+
+    li {
+      list-style: none;
+      height: 3em;
+      line-height: 3em;
+
+      a {
+        text-decoration: none;
+        position: relative;
+        display: block;
+        border-right: 2px solid #fff;
+        background-color: lightcoral;
+        z-index: 1;
+
+        &::after {
+          content: "";
+          position: absolute;
+          background-color: lightblue;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 100%;
+          transition: right .3s;
+          z-index: -1; /*TODO*/
+        }
+
+        .fa {
+          display: block;
+          position: absolute;
+          width: 3em;
+          height: 100%;
+          background-color: lightblue;
+          text-align: center;
+          line-height: inherit;
+          left: 0;
+          top: 0;
+          transition: all .3s;
+          /*z-index: 2;*/
+        }
+
+        &:hover {
+          .fa {
+            font-size: 1.1em;
+            transition: all .3s;
+          }
+
+          &::after {
+            right: 0;
+            transition: right .3s;
+          }
+        }
+
+        span {
+          margin-left: 5em;
+          position: relative;
+          margin-right: 2em;
+          /*z-index: 2;*/
+        }
+      }
+
+      &:last-of-type a {
+        border-right: none;
+      }
+
+      .sub-menu {
+        height: 0;
+        overflow: hidden;
+
+        li:last-of-type a {
+          border-right: 2px solid #fff;
+        }
+      }
+    }
+
+    & > li:hover .sub-menu {
+      height: auto; /* transition 要求开始和结束状态的具体数值,因此对 height: auto 不起作用 */
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .flex-menu a {
+      width: 3em;
+      overflow: hidden;
+      height: 100%;
+      transition: all .3s;
+
+      &:hover {
+        width: auto;
+        transition: all .3s;
+      }
+    }
+
+    .flex-menu li.has-sub-menu:hover a {
+      width: auto;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+
+    label {
+      display: block;
+    }
+
+    label:hover,
+    #flex-menu-toggle:checked + label{
+      color: #fff;
+      background-color: red;
+    }
+
+    #flex-menu-toggle:checked + label:hover {
+      color: #333;
+      background-color: lightcoral;
+    }
+
+    .flex-menu {
+      flex-direction: column;
+      width: 0;
+      overflow: hidden;
+      margin-left: -100%;
+      transition: all .3s;
+
+      li {
+        height: auto;
+        border-bottom: 2px solid #fff;
+
+        a {
+          width: auto;
+        }
+
+        &:last-of-type {
+          border-bottom: none;
+
+          a {
+            border-right: 2px solid #fff;
+          }
+        }
+      }
+    }
+
+    #flex-menu-toggle:checked + label + .flex-menu {
+      width: 100%;
+      margin-left: 0;
+      transition: all .3s;
+    }
+  }
+}

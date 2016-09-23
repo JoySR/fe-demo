@@ -27,3 +27,7 @@ Temporary Items
 .apdisk
 
 .idea
+src/css/
+idea/
+node_modules/
+plan.txt

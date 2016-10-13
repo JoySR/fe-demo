@@ -10,6 +10,7 @@ body, div, section, h5, h6, ul, ol, li {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: '微软雅黑', Helvetica, Arial, sans-serif;
 }
 
 li {
@@ -740,7 +741,7 @@ $center-fixed-wh-absolute-height: 200px;
   }
   .name {
     position: absolute;
-    top: 8rem;
+    top: 7rem;
     left: 0;
     right: 0;
     text-align: center;

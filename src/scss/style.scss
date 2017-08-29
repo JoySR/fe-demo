@@ -1154,3 +1154,27 @@ $center-fixed-wh-absolute-height: 200px;
     }
   }
 }
+
+/* 仿 Mac 标题栏 */
+
+#mac-header {
+
+  background: #fafafa;
+
+  .header{
+    background:#e3e5e9;
+    height:33px;
+    padding-left:18px;
+    border-radius: 5px 5px 0 0;
+
+    .circle{
+      background:#9fa2a8;
+      border-radius:50%;
+      float:left;
+      width:12px;
+      height:12px;
+      margin-right:6px;
+      margin-top:11px;
+    }
+  }
+}
